@@ -1,0 +1,168 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  list-style: none;
+  text-decoration: none;
+  
+}
+header{
+  position: fixed;
+  width: 100%;
+  top:0;
+  right: 0;
+  z-index:1000;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  background-color:#A90054;
+  
+}
+.navmenu{
+  display: flex;
+
+}
+.navmenu a{
+  color: #da7b7b;
+  font-size: 20px;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all .42s ease;
+  font-weight: bold;
+}
+
+.header-title {
+  text-align: center;
+  flex-grow: 1; /* Allows the header title to take remaining space */
+}
+
+.header-title h1 {
+  color: black;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.navmenu a:hover{
+  color: white;
+}
+
+
+.main-home {
+  background-image: url(f3.png);
+  width: 35%;
+  height: 85%;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  position: absolute;
+  right: 0; 
+  top: 200px; 
+ 
+}
+
+.content {
+  width: 50%; /* Adjust as needed */
+  padding: 20px;
+  margin-top: 100px; /* Adjust to match the top position of .main-home */
+}
+
+
+.content h2, .content h3, .content p, .content ul {
+  margin-bottom: 30px;
+}
+
+.content ul,p {
+  padding-left: 20px;
+}
+
+.header-title h1 {
+  color: white;
+  font-size: 2em;
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* You can choose a different font if desired */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+
+  font-weight: bold;
+  background: linear-gradient(to right, #141314, #171616);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content h2 {
+  color: #A90054;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 2px 2px #fff;
+  margin-bottom: 20px;
+}
+
+.content h3 {
+  color: #333;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #A90054;
+  padding-bottom: 5px;
+}
+
+.content p {
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  margin-bottom: 20px;
+}
+
+.content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.content ul li {
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  margin-bottom: 10px;
+}
+
+.content ul li strong {
+  color: #A90054;
+}
+
+/* .apply-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #A90054;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.apply-button:hover {
+  background-color: #870042;
+} */
+
+.apply-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #A90054;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px; /* Add some space below the button */
+}
+
+.apply-button:hover {
+  background-color: #870042;
+}
