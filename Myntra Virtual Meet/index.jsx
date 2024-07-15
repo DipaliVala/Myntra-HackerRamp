@@ -1,32 +1,42 @@
-import React, { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './home.css';
-import logo from './myntra logo.jpg'; 
+import React from "react";
+import { useParams } from "react-router-dom";
+import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
+import './room.css'; 
 
-const HomePage = () => {
-    const [value, setValue] = useState('');
-    const navigate = useNavigate();
+const RoomPage = () => {
+    const { roomId } = useParams();
 
-    const handleJoinRoom = useCallback(() => {
-        navigate(`/room/${value}`);
-    }, [navigate, value]);
+    const myMeeting = async (element) => {
+        const appID = 2043137395;
+        const serverSecret = "25790c7e303424045d0c7862448e42f9";
+        const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
+            appID,
+            serverSecret,
+            roomId,
+            Date.now().toString(),
+            "Vatsala Shah"
+        );
+        const zc = ZegoUIKitPrebuilt.create(kitToken);
+        zc.joinRoom({
+            container: element,
+            sharedLinks: [
+                {
+                    name: "Copy Link",
+                    url: `http://localhost:3000/room/${roomId}`,
+                },
+            ],
+            scenario: {
+                mode: ZegoUIKitPrebuilt.OneONoneCall, // GroupCall
+            },
+            showScreenSharingButton: true,
+        });
+    };
 
     return (
-        <div className="container">
-            <img src={logo} alt="Myntra Logo" className="logo" />
-            <h2 className="heading"><i>MYNTRA VIRTUAL MEET</i></h2> {/* Use the heading class */}
-            <input
-                value={value}
-                onChange={e => setValue(e.target.value)}
-                type="text"
-                placeholder="Enter Room Code"
-                className="input"
-            />
-            <button onClick={handleJoinRoom} className="button">
-                JOIN
-            </button>
+        <div className="room-container">
+            <div className="meeting-container" ref={myMeeting} />
         </div>
     );
 };
 
-export default HomePage;
+export default RoomPage;
